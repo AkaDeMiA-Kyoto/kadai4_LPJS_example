@@ -1,26 +1,22 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function() {
-    let overlays = document.getElementById("modal");
-    let form = document.getElementById("form-contents");
-    let body = document.querySelector("body"); 
+document.addEventListener("DOMContentLoaded", () => {
+    const overlays = document.getElementById("modal");
+    const form_confirm = document.getElementById("form-contents");
+    const form = document.getElementById("form");
+    const body = document.querySelector("body"); 
     document.getElementById('confirm-modal').addEventListener("click", function() {
 
         // フォーム内容の取得・表示
-        let name = document.getElementById("name");
-        let email = document.getElementById("email");
-        let category = document.getElementById("category");
-        let contents = document.getElementById("contents");
+        const textName = document.createTextNode(`名前：${form.name.value}`);
+        const textEmail = document.createTextNode(`メールアドレス：${form.email.value}`);
+        const textCategory = document.createTextNode(`件名：${form.category.value}`);
+        const textContents = document.createTextNode(`内容：${form.contents.value}`);
 
-        let textName = document.createTextNode(`名前：${name.value}`);
-        let textEmail = document.createTextNode(`メールアドレス：${email.value}`);
-        let textCategory = document.createTextNode(`件名：${category.value}`);
-        let textContents = document.createTextNode(`内容：${contents.value}`);
-
-        let pName = document.createElement("p");
-        let pEmail = document.createElement("p");
-        let pCategory = document.createElement("p");
-        let pContents = document.createElement("p");
+        const pName = document.createElement("p");
+        const pEmail = document.createElement("p");
+        const pCategory = document.createElement("p");
+        const pContents = document.createElement("p");
 
         pName.appendChild(textName);
         pEmail.appendChild(textEmail);
@@ -29,29 +25,25 @@ document.addEventListener("DOMContentLoaded", function() {
         // フォームで改行したところを改行
         pContents.style.whiteSpace = "pre-wrap";
 
-        form.appendChild(pName);
-        form.appendChild(pEmail);
-        form.appendChild(pCategory);
-        form.appendChild(pContents);
+        form_confirm.appendChild(pName);
+        form_confirm.appendChild(pEmail);
+        form_confirm.appendChild(pCategory);
+        form_confirm.appendChild(pContents);
         // ここまでフォーム送信内容確認
-
-
-
-
 
         body.classList.add('scroll-forbid');
         overlays.classList.add("show");
     })
 
     // ボタンを押した時モーダルを閉じる
-    let cancel = document.getElementById("form-confirm-cancel");
-    closeModal(cancel);
-    let submit = document.getElementById("submit-btn");
-    closeModal(submit);
+    const cancel = document.getElementById("form-confirm-cancel");
+    addCloseModalEvent(cancel);
+    const submit = document.getElementById("submit-btn");
+    addCloseModalEvent(submit);
 
-    function closeModal(elem) {
+    function addCloseModalEvent(elem) {
         elem.addEventListener("click", function() {
-            form.innerHTML = ""
+            form_confirm.innerHTML = ""
             overlays.classList.remove('show')
             body.classList.remove("scroll-forbid")
         })

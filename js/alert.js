@@ -1,8 +1,8 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("open").addEventListener("click", function() {
-        let date = new Date()
+        const date = new Date()
         window.alert(date)
     })
 });

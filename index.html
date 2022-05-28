@@ -7,7 +7,7 @@
 
 
 <link rel="icon" href="img/favicon.svg">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style_copy.css">
 <title>ティーラボ DeMiA CAFE</title>
 
 <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
@@ -16,9 +16,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
 </head>
-
-
 <body>
+
 
 <!-- ////////////////////////////////////////////////// header start -->
 <header id="hd">
@@ -62,7 +61,12 @@
 
   <!-- ////////////////////////////////////////////////// news start -->
   <section id="news">
-    <h2 class="news-ttl"><img src="img/news/news_ttl.svg" width="120" height="42" alt="NEWS"></h2>
+    <div class="news-title-container">
+      <h2 class="news-ttl"><img src="img/news/news_ttl.svg" width="120" height="42" alt="NEWS"></h2>
+      <p class="news-more pc">
+        <a href="#"><span class="icon-ig">最新情報はこちら</span></a>
+      </p>
+    </div>
 
     <div class="news-slider-wrap">
       <div class="news-slider slick-initialized">
@@ -100,7 +104,7 @@
       </div>
     </div><!-- // .news-slider-wrap -->
 
-    <p class="news-more">
+    <p class="news-more sp">
       <a href="#" class="btn01"><span class="icon-ig">最新情報はこちら</span></a>
     </p>
   </section>
@@ -348,7 +352,7 @@
   <section id="contact">
     <div class="box-c">
       <h2 class="contact-ttl"><img src="img/contact/contact_ttl.svg" width="163" height="42" alt="CONTACT"></h2>
-        <form action="#" class="form-container">
+      <form action="#" class="form-container" id="form">
           <div class="form-inner-container">
             <p class="form-label">名前：</p><input type="text" id="name" name="name" placeholder="例) 出見亜 太郎" class="form" required>
           </div>
@@ -365,6 +369,11 @@
           <div class="form-inner-container">
           <p class="form-label">内容：</p><textarea id="contents" name="contents" cols="30" rows="10" class="form" required></textarea>
           </div>
+          <div>
+            <input type="checkbox" name="checkbox" required>
+            プライバシーポリシーに同意します
+          </div>
+
           <a href="JavaScript:void(0)" id="confirm-modal" class="btn01 submit-btn">送信</a>
 
           <div id="modal" class="contact-overlays">
@@ -380,6 +389,7 @@
     </div>
   </section>
   <!-- ////////////////////////////////////////////////// contact end -->
+
 
 </article>
 </main>

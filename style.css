@@ -294,16 +294,8 @@ img {
 #hd {
     line-height: 1;
     position: relative;
-    max-width: 100vw;
-    max-height: 120vh;
     z-index: 1000
 }
-
-.swiper-slide {
-    max-width: 100vw;
-    height: 120vh;
-}
-
 
 .hd-img > img {
     width: 100vw;
@@ -334,7 +326,6 @@ img {
     position: absolute;
     right: 64px;
     bottom: 16px;
-    z-index: 10;
 }
 
 /* ブロック要素にして各要素に大きさを持たせる */
@@ -381,8 +372,7 @@ img {
 
 /* news関連 css */
 #news {
-    margin-bottom: 144px;
-    padding-top: 96px;
+    padding-top: 144px;
     position: relative
 }
 
@@ -406,6 +396,11 @@ img {
 
 .news-slide-in {
     padding: 0 32px
+}
+
+.news-title-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .news-slide-ttl {
@@ -446,7 +441,7 @@ img {
 
 /* about 関連のcss */
 .about-in {
-    padding: 184px 56px 120px
+    padding: 144px 56px 0
 }
 
 .about-lead,
@@ -479,7 +474,7 @@ img {
 
 /* product 関連のcss */
 #products {
-    margin-bottom: 56px;
+    padding-top: 144px;
 }
 
 .products-sct {
@@ -521,8 +516,7 @@ img {
 
 /* feature 関連 css */
 #feature {
-    margin-bottom: 80px;
-    padding-top: 96px
+    padding-top: 144px
 }
 
 .feature-ttl {
@@ -569,8 +563,7 @@ img {
 
 /* recipe 関連 css */
 #recipe {
-    margin-bottom: 112px;
-    padding-top: 96px
+    padding-top: 144px
 }
 
 .recipe-ttl {
@@ -684,8 +677,7 @@ img {
 
 /* shop 関連 css */
 #shop {
-    margin-bottom: 80px;
-    padding-top: 96px
+    padding-top: 144px
 }
 
 .shop-ttl {
@@ -774,14 +766,13 @@ td {
 }
 /* shop css 終わり */
 
-/* contact 関連 css */
 #contact {
-    padding-top: 96px;
-    text-align: center;
-    position:relative;
-
+    padding-top: 144px;
+    text-align: center
 }
 
+
+/* contact 関連 css */
 .contact-ttl {
     line-height: 1
 }
@@ -880,10 +871,12 @@ input, select, input::placeholder {
 /* ここまで モーダル用CSS */
 
 /* ここまで contact */
+
 #ft {
     line-height: 1;
     padding: 160px 0;
     text-align: center;
+
 }
 
 @media screen and (max-width:767px) {
@@ -936,10 +929,6 @@ input, select, input::placeholder {
     /* ここまでメニューアイコン */
 
     /* news 関連 css */
-    #news {
-        margin-bottom: 8px;
-        padding-top: 16vw;
-    }
     .news-ttl {
         padding: 0 16px
     }
@@ -984,7 +973,7 @@ input, select, input::placeholder {
 
     /* about 関連 css */
     .about-in {
-        padding: 64px 40px 16px
+        padding: 144px 40px 0
     }
 
     .about-lead,
@@ -1015,9 +1004,6 @@ input, select, input::placeholder {
     /* about ここまで */
 
     /* product 関連 css */
-    #products {
-        margin-bottom: 0
-    }
     .products-sct {
         margin-top: 48px
     }
@@ -1056,11 +1042,6 @@ input, select, input::placeholder {
         margin-top: 16px
     }
     /* product ここまで */
-
-    #feature {
-        margin-bottom: 32px;
-        padding-top: 96px
-    }
     .feature-ttl {
         padding: 0 16px;
         font-size: 1.8rem
@@ -1083,11 +1064,6 @@ input, select, input::placeholder {
 
     .feature-sct-text p+p {
         margin-top: 8px
-    }
-
-    #recipe {
-        margin-bottom: 56px;
-        padding-top: 56px
     }
     .recipe-ttl img {
         width: 24vw;
@@ -1142,10 +1118,6 @@ input, select, input::placeholder {
         font-size: 1.2rem
     }
 
-    #shop {
-        margin-bottom: 56px;
-        padding-top: 8px;
-    }
     .shop-ttl img {
         width: 72vw
     }
@@ -1193,10 +1165,7 @@ input, select, input::placeholder {
         text-align: center;
         width: 100%
     }
-    
-    #contact {
-        padding: 40px 16px 0
-    }
+
     .contact-ttl img {
         width: 32vw
     }
@@ -1209,31 +1178,20 @@ input, select, input::placeholder {
     .form-inner-container {
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
     }
 
-    .form-label {
-        width: 64vw;
-    }
-
-    .modal-inner {
-        width: 90vw;
-        height: 80vh;
-        padding: 16px 32px;
-    }
-
-    .form-contents {
-        height: 50vh;
-    }
-
-    #modal .form-btn {
-        margin: 8px;
+    .form-label, .form {
+        width: 100vw;
     }
     #ft {
         padding: 64px 0 128px
     }
     .ft-copyright img {
         width: 128px
+    }
+
+    .pc {
+        display: none;
     }
 }
 
@@ -1354,7 +1312,7 @@ input, select, input::placeholder {
     .shop-online {
         border-top: 3px solid #000;
         margin-top: 64px;
-        padding: 40px 8% 0;
+        padding: 40px 56px 0;
         position: relative
     }
 
@@ -1366,6 +1324,7 @@ input, select, input::placeholder {
 
     #news {
         padding-left: 40px;
+        padding-right: 72px;
     }
     .news-ttl {
         padding-left: 32px
@@ -1373,16 +1332,15 @@ input, select, input::placeholder {
     .news-slider-wrap {
         margin-top: 56px
     }
-    .news-more {
-        position: absolute;
-        right: 64px;
-        top: 96px
-    }
 
     .news-more a {
         border: none;
         padding: 0;
         min-width: 0 
+    }
+
+    .sp {
+        display: none;
     }
 
     .modal-inner {
