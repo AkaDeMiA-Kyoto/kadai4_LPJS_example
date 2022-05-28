@@ -297,6 +297,11 @@ img {
     z-index: 1000
 }
 
+.swiper-slide {
+    max-width: 100vw;
+    height: 120vh;
+}
+
 .hd-img > img {
     width: 100vw;
 }
@@ -326,6 +331,7 @@ img {
     position: absolute;
     right: 64px;
     bottom: 16px;
+    z-index: 10;
 }
 
 /* ブロック要素にして各要素に大きさを持たせる */
@@ -1183,6 +1189,21 @@ input, select, input::placeholder {
     .form-label, .form {
         width: 100vw;
     }
+
+    .modal-inner {
+        width: 90vw;
+        height: 80vh;
+        padding: 16px 32px;
+    }
+
+    .form-contents {
+        height: 50vh;
+    }
+
+    #modal .form-btn {
+        margin: 8px;
+    }
+
     #ft {
         padding: 64px 0 128px
     }
