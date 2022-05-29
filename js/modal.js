@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pCategory.appendChild(textCategory);
         pContents.appendChild(textContents);
         // フォームで改行したところを改行
-        pContents.style.whiteSpace = "pre-wrap";
+        pContents.classList.add('line-feed');
 
         form_confirm.appendChild(pName);
         form_confirm.appendChild(pEmail);
